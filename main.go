@@ -4,11 +4,13 @@ import (
 	"fmt"
 	"net/http"
 
+	"example.com/events/db"
 	"example.com/events/models"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
+	db.InitDB()
 	server := gin.Default()
 
 	server.GET("/events", getEvent)
